@@ -50,15 +50,3 @@ jobs:
           
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
           git push
-
-
-
-
-
-
-
-
-
-
-
-      
