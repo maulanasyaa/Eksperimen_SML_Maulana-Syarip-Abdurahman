@@ -35,7 +35,8 @@ jobs:
       # run preprocessing script
       - name: Run preprocessing script
         run:  |
-          python preprocessing/automate_Maulana-Syarip-Abdurahman.py
+          cd preprocessing
+          python automate_Maulana-Syarip-Abdurahman.py
 
       # commit and push
       - name: Commit and Push Processed Data
