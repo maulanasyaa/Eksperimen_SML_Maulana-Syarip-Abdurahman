@@ -45,8 +45,14 @@ jobs:
           git config --global user.name ${{ secrets.username }}
           git config --global user.email ${{ secrets.email }}
 
-          git add preprocessing/predict_the_introverts_from_the_extroverts_preprocessing/**
-          git commit -m "Auto-update: Update clean datasets"
+          git add preprocessing/predict_the_introverts_from_the_extroverts_preprocessing/
           
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes. Workflow complete without commit."
+          else
+            echo "Commit.."
+            git commit -m "Auto-update: Update clean datasets"
+            
+            git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}
+            git push
+          fi
