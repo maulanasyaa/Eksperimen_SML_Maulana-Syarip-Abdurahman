@@ -135,6 +135,6 @@ if __name__ == "__main__":
             test_data.to_csv(OUTPUT_TEST, index=False)
             print(f"Test data saved on: {OUTPUT_TEST}")
     except FileNotFoundError as e:
-        print(f"Error: File not found: {e}")
+        print(f"Error: File not found.: {e}")
     except Exception as e:
         print(f"Error: {e}")
